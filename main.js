@@ -11,6 +11,6 @@ console.log(boxen(chalk.magenta('Tahan nii'), {padding: 1, margin: 1, borderStyl
 
 console.log(boxen(chalk.bgRed.green('koju magama,'), {title: 'väga', titleAlignment: 'center', borderColor: 'cyanBright'}));
 
-console.log(boxen(chalk.magenta('Süüa ja'), {borderStyle:'arrow', borderColor: 'redBright'}));
+console.log(boxen(chalk.cyan('Süüa ja'), {borderStyle:'arrow', borderColor: 'redBright'}));
 
 console.log(boxen(chalk.bgGreen.inverse('voodis lebada'), {borderStyle:'classic'}));
