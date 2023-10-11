@@ -14,3 +14,5 @@ console.log(boxen(chalk.bgRed.green('koju magama,'), {title: 'väga', titleAlign
 console.log(boxen(chalk.cyan('Süüa ja'), {borderStyle:'arrow', borderColor: 'redBright'}));
 
 console.log(boxen(chalk.bgGreen.inverse('voodis lebada'), {borderStyle:'classic'}));
+
+console.log(boxen(chalk.bgCyan.strikethrough('Thanks #2'), {borderStyle:'bold'}));
