@@ -1,24 +1,45 @@
 import chalk from 'chalk';
 import boxen from 'boxen';
+import inquirer from 'inquirer';
 
 function write(text) {
     process.stdout.write(text);
 }
+console.clear();
+readline.emitKeypressEvents(process.stdin);
 
-import inquirer from 'inquirer';
+if(process.stdin.isTTY){
+    process.stdin.setRawMode(true);
+}
 
-inquirer
-  .prompt([
-    /* Pass your questions in here */
-  ])
-  .then((answers) => {
-    // Use user feedback for... whatever!!
-  })
-  .catch((error) => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
+
+write('@');
+
+process.stdin.on('keypress', (chunk, key) => {
+    if(key && key.name === 'c' && key.ctrl === true){
+        process.exit();
     }
-  });
-write('kaboom');
+    if(key && key.name === 'd'){
+       write('\x1B[1D');
+       write(' @'); 
+    }
+    if(key && key.name === 's'){
+        write('\x1B[1D');
+        write(' ');
+        write('\x1B[1D');
+        write('\x1B[1B');
+        write('@');
+    }
+    if(key && key.name === 'a'){
+        write('\x1B[2D');
+        write('@ '); 
+        write('\x1B[1D');
+    }
+    if(key && key.name === 'w'){
+        write('\x1B[1D');
+        write(' ');
+        write('\x1B[1D');
+        write('\x1B[1A');
+        write('@');
+    }
+});
