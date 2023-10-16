@@ -5,14 +5,20 @@ function write(text) {
     process.stdout.write(text);
 }
 
-console.log(boxen(chalk.bgGreen.magenta('Ma'), {borderStyle:'round'}));
+import inquirer from 'inquirer';
 
-console.log(boxen(chalk.magenta('Tahan nii'), {padding: 1, margin: 1, borderStyle: 'double'}));
-
-console.log(boxen(chalk.bgRed.green('koju magama,'), {padding: 10, margin: 12, title: 'väga', titleAlignment: 'center', borderColor: 'cyanBright'}));
-
-console.log(boxen(chalk.cyan('Süüa ja'), {padding: 5, margin: 30, borderStyle:'arrow', borderColor: 'redBright'}));
-
-console.log(boxen(chalk.bgGreen.inverse('voodis lebada'), {padding: 1, margin: 10, borderStyle:'classic'}));
-
-console.log(boxen(chalk.bgCyan.strikethrough('Thanks #2'), {padding: 5, margin: 1, borderStyle:'bold'}));
+inquirer
+  .prompt([
+    /* Pass your questions in here */
+  ])
+  .then((answers) => {
+    // Use user feedback for... whatever!!
+  })
+  .catch((error) => {
+    if (error.isTtyError) {
+      // Prompt couldn't be rendered in the current environment
+    } else {
+      // Something else went wrong
+    }
+  });
+write('kaboom');
